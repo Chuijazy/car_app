@@ -38,7 +38,8 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 110,),
                     ElevatedButton(
-                      onPressed: (){}, 
+                      onPressed: (){
+                      }, 
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.redButton,),
                       child: Padding(
