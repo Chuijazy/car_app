@@ -1,6 +1,7 @@
 import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_colors.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
+import 'package:car_app/features/auth/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -39,6 +40,7 @@ class WelcomeScreen extends StatelessWidget {
                       height: 110,),
                     ElevatedButton(
                       onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),),);
                       }, 
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.redButton,),

@@ -9,6 +9,7 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isPasswordVisible = false;
     return  Scaffold(
       body: SafeArea(
         child: Padding(
@@ -34,11 +35,24 @@ class SignInScreen extends StatelessWidget {
               Text('PASSWORD',
               style: AppTextstyles.regular.setSize(14),
               ),
-              TextFormField(
-                decoration: 
-                const InputDecoration(
-                  hintText: '******',),
+              StatefulBuilder(
+              builder: (context, setState) {
+             return TextFormField(
+                obscureText: !isPasswordVisible,
+                decoration: InputDecoration(
+                  hintText: '******',
+                  suffixIcon: IconButton(
+                    icon: Icon(isPasswordVisible ? Icons.visibility : Icons.visibility_off),
+                  onPressed: () {
+                setState(() {
+              isPasswordVisible = !isPasswordVisible;
+               });
+               },
               ),
+              ),
+             );
+           },
+           ),
               Text('Forgot password?',
               style: TextStyle(fontSize: 10),),
               SizedBox(height: 20,),
