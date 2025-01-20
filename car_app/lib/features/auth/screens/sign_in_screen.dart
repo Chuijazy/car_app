@@ -1,5 +1,7 @@
+import 'package:car_app/core/extencions/int_extencions.dart';
 import 'package:car_app/core/extencions/textstyle_extension.dart';
 import 'package:car_app/core/resource/app_assets.dart';
+import 'package:car_app/core/theme/app_colors.dart';
 //import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
 import 'package:car_app/features/auth/screens/sign_up_screen.dart';
@@ -19,11 +21,11 @@ class SignInScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20,),
+              20.verticalSpace,
               Text('Sign In', 
               style: AppTextstyles.regular.setSize(48),
               ),
-              SizedBox(height: 100,),
+              100.verticalSpace,
               Text('EMAIL OR PHONE',
               style: AppTextstyles.regular.setSize(14),
               ),
@@ -32,7 +34,7 @@ class SignInScreen extends StatelessWidget {
                 const InputDecoration(
                   hintText: 'Loremipsum@gmail.com',),
               ),
-              SizedBox(height: 25,),
+              25.verticalSpace,
               Text('PASSWORD',
               style: AppTextstyles.regular.setSize(14),
               ),
@@ -56,7 +58,7 @@ class SignInScreen extends StatelessWidget {
            ),
               Text('Forgot password?',
               style: TextStyle(fontSize: 10),),
-              SizedBox(height: 20,),
+              20.verticalSpace,
               ElevatedButton( 
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
@@ -74,7 +76,7 @@ class SignInScreen extends StatelessWidget {
                     border: Border.all(
                       color: Colors.transparent, width: 2,
                     ),
-                    color: Color(0xff2B4C59),
+                    color: AppColors.mainColor,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +89,7 @@ class SignInScreen extends StatelessWidget {
               ),
               Center(child: Text('OR', 
               style: TextStyle(fontSize: 14),),),
-              SizedBox(height: 5,),
+              5.verticalSpace,
               // ignore: avoid_unnecessary_containers
               ElevatedButton( 
                 style: ElevatedButton.styleFrom(
@@ -116,7 +118,7 @@ class SignInScreen extends StatelessWidget {
                  ], ),
                 ),
               ),
-              SizedBox(height: 10,),
+              10.verticalSpace,
              ElevatedButton( 
               style: ElevatedButton.styleFrom(
                   elevation: 0,
@@ -148,7 +150,7 @@ class SignInScreen extends StatelessWidget {
                 children: [
                   Text('Don’t Have an account yet?',
                   style: TextStyle(fontSize: 10),),
-                  SizedBox(width: 100,),
+                  100.horizontalSpace,
                   ElevatedButton(onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen(),),);
                   }, 

@@ -1,3 +1,4 @@
+import 'package:car_app/core/extencions/int_extencions.dart';
 import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_colors.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
@@ -23,21 +24,18 @@ class WelcomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 150,),
+                    150.verticalSpace,
                       Image.asset(AppAssets.welcomeLogo,
                       height: 60,
                       ),
-                      SizedBox(
-                      height: 160,),
+                      160.verticalSpace,
                       Text('Rent your dream car from the',
                       style: AppTextstyles.mainText,
                       ),
                     Text('Best Company',
                       style: AppTextstyles.mainText,
                     ),
-                    SizedBox(
-                      height: 110,),
+                    110.verticalSpace,
                     ElevatedButton(
                       onPressed: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),),);
