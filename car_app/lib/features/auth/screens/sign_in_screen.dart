@@ -57,6 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 obscureText: !isPasswordVisible,
                 decoration: InputDecoration(
                   hintText: '******',
+
                   suffixIcon: IconButton(
                     icon: Icon(isPasswordVisible ? Icons.visibility : Icons.visibility_off),
                   onPressed: () {
