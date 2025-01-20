@@ -1,15 +1,31 @@
-import 'package:car_app/core/extencions/int_extencions.dart';
-import 'package:car_app/core/extencions/textstyle_extension.dart';
+import 'package:car_app/core/extensions/int_extensions.dart';
+import 'package:car_app/core/extensions/textstyle_extension.dart';
 import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_colors.dart';
 //import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
+import 'package:car_app/features/auth/screens/auth_textfield.dart';
 import 'package:car_app/features/auth/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+
+  final _loginController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _loginController.dispose();
+    super.dispose();
+    _passwordController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     bool isPasswordVisible = false;
@@ -26,14 +42,11 @@ class SignInScreen extends StatelessWidget {
               style: AppTextstyles.regular.setSize(48),
               ),
               100.verticalSpace,
-              Text('EMAIL OR PHONE',
-              style: AppTextstyles.regular.setSize(14),
-              ),
-              TextFormField(
-                decoration: 
-                const InputDecoration(
-                  hintText: 'Loremipsum@gmail.com',),
-              ),
+              AuthTextfield(
+                title:'EMAIL OR PHONE' , 
+                hint: 'Loremipsum@gmail.com', 
+                controller: _loginController,
+                ),
               25.verticalSpace,
               Text('PASSWORD',
               style: AppTextstyles.regular.setSize(14),

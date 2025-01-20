@@ -1,5 +1,5 @@
-import 'package:car_app/core/extencions/int_extencions.dart';
-import 'package:car_app/core/extencions/textstyle_extension.dart';
+import 'package:car_app/core/extensions/int_extensions.dart';
+import 'package:car_app/core/extensions/textstyle_extension.dart';
 import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
 import 'package:flutter/material.dart';
