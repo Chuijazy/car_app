@@ -1,10 +1,7 @@
-import 'package:car_app/core/extensions/int_extensions.dart';
-import 'package:car_app/core/extensions/textstyle_extension.dart';
+import 'package:car_app/core/extencions/textstyle_extension.dart';
 import 'package:car_app/core/resource/app_assets.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
 import 'package:flutter/material.dart';
-
-import 'sign_in_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -24,15 +21,15 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                20.verticalSpace,
+                const SizedBox(height: 20),
                 Text(
                   'Sign Up',
                   style: AppTextstyles.regular.setSize(48),
                 ),
-                40.verticalSpace,
+                const SizedBox(height: 40),
                 Text('FULL NAME', style: AppTextstyles.regular.setSize(14)),
                 TextFormField(
-                  decoration: const InputDecoration(hintText: 'Lorem Ipsum'),
+                  decoration: const InputDecoration(hintText: 'John Doe'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your name';
@@ -40,21 +37,21 @@ class SignUpScreen extends StatelessWidget {
                     return null;
                   },
                 ),
-                20.verticalSpace,
+                const SizedBox(height: 20),
                 Text('EMAIL', style: AppTextstyles.regular.setSize(14)),
                 TextFormField(
-                  decoration: const InputDecoration(hintText: 'Loremipsum@gmail.com'),
+                  decoration: const InputDecoration(hintText: 'example@gmail.com'),
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
                     } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                      return 'Please enter a right email';
+                      return 'Please enter a valid email';
                     }
                     return null;
                   },
                 ),
-                25.verticalSpace,
+                const SizedBox(height: 25),
                 Text('PASSWORD', style: AppTextstyles.regular.setSize(14)),
                 StatefulBuilder(
                   builder: (context, setState) {
@@ -75,14 +72,14 @@ class SignUpScreen extends StatelessWidget {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your password';
                         } else if (value.length < 6) {
-                          return 'Password must be at least 6 characters';
+                          return 'Password must be at least 6 characters long';
                         }
                         return null;
                       },
                     );
                   },
                 ),
-                20.verticalSpace,
+                const SizedBox(height: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
@@ -96,7 +93,7 @@ class SignUpScreen extends StatelessWidget {
                       print('');
                     } else {
                       // ignore: avoid_print
-                      print('Error');
+                      print('');
                     }
                   },
                   child: Container(
@@ -119,14 +116,13 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                5.verticalSpace,
                 Center(
                   child: Text(
                     'OR',
                     style: const TextStyle(fontSize: 14),
                   ),
                 ),
-                10.verticalSpace,
+                const SizedBox(height: 10),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
@@ -152,7 +148,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                5.verticalSpace,
+                const SizedBox(height: 5),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
@@ -182,14 +178,12 @@ class SignUpScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Have an account Already?',
+                      'Don’t Have an account yet?',
                       style: TextStyle(fontSize: 10),
                     ),
-                    100.horizontalSpace,
+                    const SizedBox(width: 100),
                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),),);
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
                         backgroundColor: Colors.transparent,
