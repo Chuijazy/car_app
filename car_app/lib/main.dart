@@ -1,6 +1,8 @@
-//import 'package:car_app/features/auth/screens/sign_in_screen.dart';
-import 'package:car_app/features/welcome/welcome_screen.dart';
+import 'package:car_app/features/auth/home/data_provider.dart';
+import 'package:car_app/features/cart/cars_catalog_screen.dart';
+import 'package:car_app/features/cart/favorite_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const CarApp());
@@ -11,8 +13,18 @@ class CarApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: WelcomeScreen(),
-    );
+    return MultiProvider(
+     providers: [ 
+      ChangeNotifierProvider(
+        create: (context) => DataProvider(),
+        ),
+        ChangeNotifierProvider(
+        create: (context) => FavoriteProvider(),
+        ),
+     ],
+        child: const MaterialApp(
+          home: CarsCatalogScreen(),
+        ),
+      );
   }
 }
