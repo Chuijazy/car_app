@@ -14,7 +14,7 @@ class CartScreen extends StatelessWidget {
         title: Text('Cart'),
       ),
       body: ListView.separated(
-        itemBuilder: (context, index) => Text('$index ${providerW.cartList[index].model}'), 
+        itemBuilder: (context, index) => Text('$index ${providerW.cartList[index].model} ${providerW.cartList[index].count}'), 
         separatorBuilder: (context, index) => 20.verticalSpace, 
         itemCount: providerW.cartList.length),
     );
