@@ -189,6 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             providerR.showSportCars();
                             case CarFilters.familyCars:
                             providerR.showFamilyCars();
+                            // ignore: unreachable_switch_default
                             default:
                           }
   }
