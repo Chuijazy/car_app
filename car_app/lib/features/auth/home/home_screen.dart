@@ -10,6 +10,7 @@ import 'package:car_app/features/auth/home/widgets/ad_widget.dart';
 import 'package:car_app/features/auth/home/widgets/car_chip_widget.dart';
 import 'package:car_app/features/cart/cart_provider.dart';
 import 'package:car_app/features/cart/cart_screen.dart';
+import 'package:car_app/features/deteil/deteil_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -130,33 +131,40 @@ class _HomeScreenState extends State<HomeScreen> {
                (BuildContext context, int index) {
                return ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                 child: Container(
-                  // ignore: deprecated_member_use
-                  color: providerW.currentList[index].type.getColor.withOpacity(0.4),
-                   child: Column(
-                     children: [
-                       Expanded(
-                         child: CachedNetworkImage(
-                          placeholder: (context, url) => 
-                          const SizedBox.shrink(),
-                          errorWidget: (context, url, error) => 
-                          const Icon(Icons.error),
-                          imageUrl: providerW.currentList[index].image),
-                       ),
-                        Row(
-                          children: [
-                            10.horizontalSpace,
-                            Expanded(
-                              child: Text(
-                                '${providerW.currentList[index].brand} ${providerW.currentList[index].model}')),
-                            IconButton(
-                          onPressed: (){
-                            context.read<CartProvider>().addItemToCart(providerW.currentList[index]);
-                          }, 
-                          icon: const Icon(Icons.add_shopping_cart),),
-                          ],
-                        ),
-                     ],
+                 child: GestureDetector(
+                  onTap: () {
+                    context.push( DeteilScreen(car: providerW.currentList[index],
+                    ),
+                  );
+                  },
+                   child: Container(
+                    // ignore: deprecated_member_use
+                    color: providerW.currentList[index].type.getColor.withOpacity(0.4),
+                     child: Column(
+                       children: [
+                         Expanded(
+                           child: CachedNetworkImage(
+                            placeholder: (context, url) => 
+                            const SizedBox.shrink(),
+                            errorWidget: (context, url, error) => 
+                            const Icon(Icons.error),
+                            imageUrl: providerW.currentList[index].image),
+                         ),
+                          Row(
+                            children: [
+                              10.horizontalSpace,
+                              Expanded(
+                                child: Text(
+                                  '${providerW.currentList[index].brand} ${providerW.currentList[index].model}')),
+                              IconButton(
+                            onPressed: (){
+                              context.read<CartProvider>().addItemToCart(providerW.currentList[index]);
+                            }, 
+                            icon: const Icon(Icons.add_shopping_cart),),
+                            ],
+                          ),
+                       ],
+                     ),
                    ),
                  ),
                );

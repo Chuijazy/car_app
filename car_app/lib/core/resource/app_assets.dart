@@ -3,4 +3,5 @@ abstract class AppAssets {
   static const String welcomeLogo = 'assets/welcome_logo.png';
   static const String google = 'assets/google.png';
   static const String facebook = 'assets/facebook.png';
+  static const String avatarPick = 'assets/avatar_pick.png';
 }
