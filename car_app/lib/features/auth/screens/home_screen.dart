@@ -8,9 +8,10 @@ import 'package:car_app/core/theme/app_textstyles.dart';
 import 'package:car_app/features/auth/home/provider/cars_provider.dart';
 import 'package:car_app/features/auth/home/widgets/ad_widget.dart';
 import 'package:car_app/features/auth/home/widgets/car_chip_widget.dart';
+import 'package:car_app/features/auth/home/widgets/more_list.dart';
 import 'package:car_app/features/cart/cart_provider.dart';
 import 'package:car_app/features/cart/cart_screen.dart';
-import 'package:car_app/features/deteil/deteil_screen.dart';
+import 'package:car_app/features/auth/screens/deteil_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -106,13 +107,18 @@ class _HomeScreenState extends State<HomeScreen> {
            Row(
               children: [
               Expanded(
-               child: Text(
-               'View more',
-               style: AppTextstyles.regular
-               .setSize(12)
-               .copyWith(color: Color(0xffC64949),),
-                textAlign: TextAlign.right, 
-                ),
+               child: GestureDetector(
+                onTap: () {
+                  context.push(MoreList());
+                },
+                 child: Text(
+                 'View more',
+                 style: AppTextstyles.regular
+                 .setSize(12)
+                 .copyWith(color: Color(0xffC64949),),
+                  textAlign: TextAlign.right, 
+                  ),
+               ),
                ),
              ],
            ),

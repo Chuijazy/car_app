@@ -30,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(height: 40),
                 Text('FULL NAME', style: AppTextstyles.regular.setSize(14)),
                 TextFormField(
-                  decoration: const InputDecoration(hintText: 'John Doe'),
+                  decoration: const InputDecoration(hintText: 'Lorem Ipsum'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your name';
@@ -41,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text('EMAIL', style: AppTextstyles.regular.setSize(14)),
                 TextFormField(
-                  decoration: const InputDecoration(hintText: 'example@gmail.com'),
+                  decoration: const InputDecoration(hintText: 'Loremipsum@gmail.com'),
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -179,7 +179,7 @@ class SignUpScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Don’t Have an account yet?',
+                      'Have an account Already?',
                       style: TextStyle(fontSize: 10),
                     ),
                     const SizedBox(width: 100),
