@@ -82,6 +82,7 @@ class _SignInScreenState extends State<SignInScreen> {
                        textColor: Colors.white,
                        fontSize: 16.0
                       );
+                        // ignore: use_build_context_synchronously
                         context.push(HomeScreen());
                     } else {
                      await Fluttertoast.showToast(
