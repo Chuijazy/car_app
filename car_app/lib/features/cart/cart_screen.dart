@@ -8,15 +8,24 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final providerW = context.read<CartProvider>();
+    final providerW = context.watch<CartProvider>(); // watch вместо read
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cart'),
-      ),
+      appBar: AppBar(title: Text('Cart')),
       body: ListView.separated(
-        itemBuilder: (context, index) => Text('$index ${providerW.cartList[index].model} ${providerW.cartList[index].count}'), 
-        separatorBuilder: (context, index) => 20.verticalSpace, 
-        itemCount: providerW.cartList.length),
+        itemBuilder: (context, index) {
+          final item = providerW.cartList[index];
+
+          return ListTile(
+            leading: Image.network(item.image, width: 50, height: 50), // Добавляем фото
+            title: Text('${item.brand} ${item.model}'),
+            subtitle: Text('Цена: \$${item.price} | Количество: ${item.count}'),
+            trailing: Text('Итого: \$${(item.price * item.count).toStringAsFixed(2)}'),
+          );
+        },
+        separatorBuilder: (context, index) => 20.verticalSpace,
+        itemCount: providerW.cartList.length,
+      ),
     );
   }
 }

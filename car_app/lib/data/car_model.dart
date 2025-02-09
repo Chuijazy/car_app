@@ -24,6 +24,7 @@ class CarModel {
   final double? price,
   final String? image,
   final CarFilters? type,
+  final int ? count,
 
     }) {
       return CarModel(
@@ -32,7 +33,7 @@ class CarModel {
         price: price ?? this.price, 
         image: image ?? this.image, 
         type: type ?? this.type,
-        count: count + 1,
+        count: count ?? this.count,
       );
     }
 }

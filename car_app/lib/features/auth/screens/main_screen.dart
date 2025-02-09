@@ -1,9 +1,9 @@
 import 'package:car_app/core/extensions/context_extension.dart';
 import 'package:car_app/core/extensions/textstyle_extension.dart';
 import 'package:car_app/core/resource/app_assets.dart';
+import 'package:car_app/core/theme/app_colors.dart';
 import 'package:car_app/core/theme/app_textstyles.dart';
-import 'package:car_app/features/auth/screens/home_screen.dart';
-import 'package:car_app/features/auth/screens/sign_up_screen.dart';
+import 'package:car_app/features/auth/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -45,10 +45,10 @@ class MainScreen extends StatelessWidget {
             ),
             SizedBox(height: 150), 
             ElevatedButton(onPressed: () {
-              context.push(SignUpScreen());
+              context.push(SignInScreen());
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xffC64949),
+              backgroundColor: AppColors.redButton,
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 40),

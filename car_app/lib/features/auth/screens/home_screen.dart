@@ -38,10 +38,21 @@ class _HomeScreenState extends State<HomeScreen> {
     final providerW = context.watch<CarsProvider>();
     return  Scaffold(
       drawer: Container(
-        color: Colors.pink,
+        color: Colors.grey,
         child: Column(
           children: [
-            Text('Drawer'),
+            SafeArea(
+                child: Icon(Icons.account_box_outlined,
+                size: 50,
+                ),
+            ),
+            Icon(Icons.wallet_outlined,
+            size: 50,
+            ),
+            30.verticalSpace,
+            Icon(Icons.add_ic_call,
+            size: 50,
+            ),
           ],
         ),
       ),
